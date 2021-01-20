@@ -120,6 +120,7 @@
 
 
 // Tried to shorten it, nested loops won't run fast enough in Javascript, would need a different approach.
+// Probably breaking the array into smaller segments or something of the sort.
 const newYearChaos = (q) => {
     let totalSwaps = 0;
     let tooChaotic = false;
@@ -134,6 +135,10 @@ const newYearChaos = (q) => {
                     break;
                 }
             }
+        }
+
+        if (tooChaotic) {
+            break;
         }
     }
 
