@@ -125,7 +125,6 @@ const newYearChaos = (q) => {
     let totalSwaps = 0;
     let tooChaotic = false;
 
-    // Check for to chaotic O(n)
     for (let i = 0; i < q.length; i++) {
         for (let j = i + 1; j < q.length; j++) {            
             if (q[i] > q[j]) {
@@ -151,8 +150,42 @@ const newYearChaos = (q) => {
 
 
 
-newYearChaos([2, 1, 5, 3, 4]);
-newYearChaos([2, 5, 1, 3, 4]);
-newYearChaos([1, 2, 5, 3, 4, 7, 8, 6]);
-newYearChaos([5, 1, 2, 3, 7, 8, 6, 4])
-newYearChaos([1, 2, 5, 3, 7, 8, 6, 4])
+// const newYearChaos = (q) => {
+//     let totalSwaps = 0;
+//     let tooChaotic = false;
+
+//     for (let i = 0; i < q.length; i++) {
+
+//         if (q[i] - (i + 1) > 2) {
+//             tooChaotic = true;
+//             break;
+//         }
+
+//         const value1 = i + 2;
+//         const value2 = i + 3;
+
+//         if (q[i] === value2) {
+//             totalSwaps = totalSwaps + 2;
+//         } else if (q[i] === value1) {
+//             totalSwaps++
+//         } else if (q[i + 1] < q[i]) {
+//             totalSwaps++
+//         } else if (q[i + 2] < q[i]) {
+//             totalSwaps = totalSwaps + 2;
+//         }
+//     }
+    
+//     if (tooChaotic) {
+//         console.log("Too chaotic");
+//     } else {
+//         console.log(totalSwaps);
+//     }
+// }
+
+
+
+newYearChaos([2, 1, 5, 3, 4]); // 3
+newYearChaos([2, 5, 1, 3, 4]); // Chaos 
+newYearChaos([1, 2, 5, 3, 4, 7, 8, 6]); // 4
+newYearChaos([5, 1, 2, 3, 7, 8, 6, 4]); // Chaos
+newYearChaos([1, 2, 5, 3, 7, 8, 6, 4]); // 7
